@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Marvel Learning Academy</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+
+}
+
+
+/* Card */
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 25px cyan;
+}
+
+/* Title */
+h1{
+  font-size:26px;
+}
+
+/* Tag */
+.tag{
+  display:inline-block;
+  padding:5px 10px;
+  border-radius:5px;
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+.blue{ background:cyan; color:black; }
+
+/* Button */
+button{
+  padding:8px 12px;
+  margin:5px;
+  border:none;
+  background:cyan;
+  cursor:pointer;
+  border-radius:5px;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+/* Glow */
+.glow{
+  animation:glow 1s infinite alternate;
+}
+
+@keyframes glow{
+  from{ text-shadow:0 0 5px cyan;}
+  to{ text-shadow:0 0 20px cyan;}
+}
+
+/* Tips box */
+#tipsBox{
+  margin-top:15px;
+  text-align:left;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="tag blue">EDUCATION</div>
+
+  <h1 class="glow">Marvel Learning Academy</h1>
+
+  <p><b>Inspired by:</b> TECH BOYZ • TECH ASTRA</p>
+
+  <p>Choose a hero to get study tips 👇</p>
+
+  <!-- Buttons -->
+  <button onclick="showTips('cap')">🛡️ Captain America</button>
+  <button onclick="showTips('iron')">🤖 Iron Man</button>
+  <button onclick="showTips('spider')">🕷️ Spider-Man</button>
+  <button onclick="showTips('thor')">⚡ Thor</button>
+
+  <!-- Tips -->
+  <div id="tipsBox"></div>
+
+</div>
+
+<script>
+
+function showTips(hero){
+  let tips = "";
+
+  if(hero === "cap"){
+    tips = `
+    <h3>🛡️ Captain America Tips</h3>
+    <ul>
+      <li>Stay disciplined and follow a routine</li>
+      <li>Never give up, even when it's tough</li>
+      <li>Focus on consistency over perfection</li>
+      <li>Be responsible for your goals</li>
+    </ul>`;
+  }
+
+  else if(hero === "iron"){
+    tips = `
+    <h3>🤖 Iron Man Tips</h3>
+    <ul>
+      <li>Think creatively and solve problems</li>
+      <li>Learn new skills like coding</li>
+      <li>Use technology to improve learning</li>
+      <li>Keep upgrading yourself daily</li>
+    </ul>`;
+  }
+
+  else if(hero === "spider"){
+    tips = `
+    <h3>🕷️ Spider-Man Tips</h3>
+    <ul>
+      <li>Balance study and fun properly</li>
+      <li>Be curious and ask questions</li>
+      <li>Learn from mistakes</li>
+      <li>Stay humble and keep improving</li>
+    </ul>`;
+  }
+
+  else if(hero === "thor"){
+    tips = `
+    <h3>⚡ Thor Tips</h3>
+    <ul>
+      <li>Be confident in your abilities</li>
+      <li>Stay strong mentally and physically</li>
+      <li>Take action instead of overthinking</li>
+      <li>Lead with courage</li>
+    </ul>`;
+  }
+
+  document.getElementById("tipsBox").innerHTML = tips;
+}
+
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Study Planner</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{
+  font-size:24px;
+}
+
+ul{
+  text-align:left;
+}
+
+button{
+  padding:8px;
+  margin-top:10px;
+  background:cyan;
+  border:none;
+  border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>📘 Study Planner</h1>
+
+  <p>Create your daily study plan:</p>
+
+  <ul>
+    <li>📚 2 hours Study</li>
+    <li>🧠 Revision</li>
+    <li>📝 Practice Questions</li>
+    <li>🎯 Weekly Goal</li>
+  </ul>
+
+  <button onclick="alert('Stay Consistent!')">Motivate Me</button>
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Motivation</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{
+  font-size:24px;
+}
+
+.quote{
+  margin-top:15px;
+  font-style:italic;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🔥 Motivation Zone</h1>
+
+  <p class="quote" id="quote">Click below for motivation 👇</p>
+
+  <button onclick="newQuote()">Get Quote</button>
+</div>
+
+<script>
+function newQuote(){
+  const quotes = [
+    "Success needs hard work 💪",
+    "Never give up 🚀",
+    "You can do it 🔥",
+    "Focus and win 🎯"
+  ];
+
+  let random = Math.floor(Math.random()*quotes.length);
+  document.getElementById("quote").innerText = quotes[random];
+}
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Quiz</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+button{
+  display:block;
+  margin:10px auto;
+  padding:8px;
+  background:cyan;
+  border:none;
+  border-radius:5px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🧠 Quick Quiz</h1>
+
+  <p>What is 44 + 56 =?</p>
+
+  <button onclick="check(110)">110</button>
+  <button onclick="check(96)">96</button>
+  <button onclick="check(34)">34</button>
+  <button onclick="check(100)">100</button>
+
+  <p id="result"></p>
+</div>
+
+<script>
+function check(ans){
+  if(ans === 100){
+    document.getElementById("result").innerText = "Correct ✅";
+  } else {
+    document.getElementById("result").innerText = "Wrong ❌";
+  }
+}
+</script>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Discipline & Routine</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🛡️ Discipline & Routine</h1>
+
+  <p>
+  Discipline is the foundation of success. Just like Captain America,
+  following a daily routine helps you stay focused and productive.
+  When you plan your day and stick to it, you build strong habits.
+  Small actions done daily lead to big results over time.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Never Give Up</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🛡️ Never Give Up</h1>
+
+  <p>
+  Life is full of challenges, but giving up should never be an option.
+  Captain America teaches us to stay strong even in difficult situations.
+  Failure is just a step towards success. Keep trying, keep learning,
+  and never lose hope in yourself.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Consistency</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🛡️ Consistency Over Perfection</h1>
+
+  <p>
+  You don not need to be perfect to succeed. What matters is being consistent.
+  Small daily efforts are more powerful than occasional perfect work.
+  Captain America shows us that steady progress leads to great achievements.
+  Keep going, even if it's slow.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Responsibility</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🛡️ Responsibility for Goals</h1>
+
+  <p>
+  Your goals are your responsibility. No one else can achieve them for you.
+  Captain America always takes responsibility for his actions and missions.
+  Stay committed, be accountable, and take control of your future.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Think Creatively</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🤖 Think Creatively</h1>
+
+  <p>
+  Iron Man is known for his innovative thinking and problem-solving skills.
+  Thinking creatively helps you find unique solutions to challenges.
+  Always try new ideas and don’t be afraid to think differently.
+  Creativity can turn simple ideas into powerful innovations.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Learn New Skills</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🤖 Learn New Skills</h1>
+
+  <p>
+  Iron Man constantly upgrades his knowledge by learning new skills like coding and technology.
+  In today’s world, learning new skills is very important for growth.
+  Keep exploring new subjects and improve your abilities every day.
+  Knowledge is your biggest power.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Use Technology</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🤖 Use Technology Wisely</h1>
+
+  <p>
+  Technology is a powerful tool when used correctly. Iron Man uses advanced technology
+  to solve problems and make life better. You can use technology for learning,
+  researching, and improving your skills. Always use it wisely and productively.
+  </p>
+
+</div>
+
+</body>
+</html> 
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Upgrade Yourself</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🤖 Upgrade Yourself Daily</h1>
+
+  <p>
+  Just like Iron Man keeps improving his suit, you should keep upgrading yourself.
+  Daily improvement, even in small steps, leads to great success.
+  Learn something new every day and keep growing.
+  Continuous improvement is the key to becoming better.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Balance Study and Fun</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🕷️ Balance Study and Fun</h1>
+
+  <p>
+  Just like Spider-Man balances his life as a student and a hero,
+  you should balance study and fun. Too much study can cause stress,
+  and too much fun can distract you. A healthy balance keeps your mind
+  fresh and helps you stay productive.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Be Curious</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🕷️ Be Curious and Ask Questions</h1>
+
+  <p>
+  Curiosity is the key to learning. Spider-Man is always curious and
+  eager to understand things better. Asking questions helps you gain
+  deeper knowledge and clears your doubts. Never hesitate to learn more.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Learn from Mistakes</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🕷️ Learn from Mistakes</h1>
+
+  <p>
+  Everyone makes mistakes, even Spider-Man. What matters is learning from them.
+  Mistakes teach valuable lessons and help you grow stronger.
+  Instead of feeling bad, use your mistakes as a stepping stone to success.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Stay Humble</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>🕷️ Stay Humble and Keep Improving</h1>
+
+  <p>
+  Spider-Man remains humble despite his powers. Being humble helps you stay grounded
+  and open to learning. Always aim to improve yourself and never stop growing.
+  Success comes to those who stay kind and keep working hard.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Be Confident</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>⚡ Be Confident</h1>
+
+  <p>
+  Thor is known for his strong confidence and belief in his abilities.
+  Being confident helps you face challenges without fear.
+  Trust yourself and your skills, and never doubt your potential.
+  Confidence is the first step toward success.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Stay Strong</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>⚡ Stay Strong Mentally & Physically</h1>
+
+  <p>
+  Strength is not just physical, but also mental. Thor shows us the importance
+  of staying strong in every situation. Take care of your body and mind.
+  Exercise regularly and keep a positive mindset to overcome challenges.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Take Action</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>⚡ Take Action</h1>
+
+  <p>
+  Thor is a man of action. Instead of overthinking, he takes bold steps.
+  Overthinking can stop you from moving forward.
+  Start taking small actions toward your goals and build momentum.
+  Action leads to progress and success.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lead with Courage</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+.card{
+  width:320px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+}
+
+h1{ color:cyan; }
+p{ text-align:justify; line-height:1.6; }
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <h1>⚡ Lead with Courage</h1>
+
+  <p>
+  Thor leads with bravery and courage in every battle.
+  Being courageous means doing the right thing even when it's difficult.
+  Take leadership in your life and guide others with confidence and strength.
+  Courage helps you stand out and make a difference.
+  </p>
+
+</div>
+
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Marvel Learning Academy - Login & Info</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b0f1a;
+  color:white;
+  text-align:center;
+}
+
+/* Card */
+.card{
+  width:400px;
+  margin:30px auto;
+  padding:20px;
+  border-radius:15px;
+  background:#111827;
+  box-shadow:0 0 15px cyan;
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:scale(1.02);
+  box-shadow:0 0 25px cyan;
+}
+
+/* Titles */
+h1{
+  font-size:26px;
+  margin-bottom:10px;
+}
+
+/* Input fields */
+input, select{
+  width:90%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:5px;
+  border:none;
+}
+
+/* Button */
+button{
+  padding:10px 20px;
+  margin-top:10px;
+  border:none;
+  background:cyan;
+  color:black;
+  cursor:pointer;
+  border-radius:5px;
+  transition:0.3s;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+/* Display submitted info */
+#submittedInfo{
+  margin-top:20px;
+  text-align:left;
+  background:#111827;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 0 10px cyan;
+}
+
+/* Glow effect for title */
+.glow{
+  animation:glow 1s infinite alternate;
+}
+
+@keyframes glow{
+  from{ text-shadow:0 0 5px cyan;}
+  to{ text-shadow:0 0 20px cyan;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+  <div class="tag blue">EDUCATION</div>
+
+  <h1 class="glow">Marvel Learning Academy</h1>
+
+  <p><b>Please enter your details below:</b></p>
+
+  <!-- Form -->
+  <form id="infoForm">
+    <input type="text" id="name" placeholder="Your Name" required><br>
+    <input type="email" id="email" placeholder="Your Email" required><br>
+    <input type="text" id="contact" placeholder="Contact Number" required><br>
+
+    <p><b>Select Your Hero:</b></p>
+    <select id="hero" required>
+      <option value="">--Select Hero--</option>
+      <option value="Captain America">🛡️ Captain America</option>
+      <option value="Iron Man">🤖 Iron Man</option>
+      <option value="Spider-Man">🕷️ Spider-Man</option>
+      <option value="Thor">⚡ Thor</option>
+    </select><br>
+
+    <p><b>Select Your Course:</b></p>
+    <select id="course" required>
+      <option value="">--Select Course--</option>
+      <option value="Coding Basics">Coding Basics</option>
+      <option value="Advanced Technology">Advanced Technology</option>
+      <option value="Physics Mastery">Physics Mastery</option>
+      <option value="Mathematics Genius">Mathematics Genius</option>
+    </select><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Display submitted info -->
+  <div id="submittedInfo"></div>
+</div>
+
+<script>
+// Handle form submission
+document.getElementById("infoForm").addEventListener("submit", function(e){
+  e.preventDefault(); // Prevent page reload
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const contact = document.getElementById("contact").value;
+  const hero = document.getElementById("hero").value;
+  const course = document.getElementById("course").value;
+
+  const display = `
+    <h3>✅ All Info Submitted:</h3>
+    <p><b>Name:</b> ${name}</p>
+    <p><b>Email:</b> ${email}</p>
+    <p><b>Contact Number:</b> ${contact}</p>
+    <p><b>Selected Hero:</b> ${hero}</p>
+    <p><b>Selected Course:</b> ${course}</p>
+  `;
+
+  document.getElementById("submittedInfo").innerHTML = display;
+
+  // Optional: clear form
+  this.reset();
+});
+</script>
+
+</body>
+</html>
+
+
+
